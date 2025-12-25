@@ -35,7 +35,9 @@ test.beforeAll(async () => {
 });
 
 test.afterAll(async () => {
-  await browser.close();
+   if (browser) {
+    await browser.close();
+  }
 });
 
 
