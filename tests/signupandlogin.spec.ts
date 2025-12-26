@@ -9,7 +9,7 @@ let context: BrowserContext;
 let page: Page;
 
 test.beforeAll(async () => {
-  browser = await chromium.launch({ headless: false });
+  browser = await chromium.launch({ headless: true });
   context = await browser.newContext();
   page = await context.newPage();
 
@@ -59,7 +59,7 @@ test('Search and add product to cart (after login)', async () => {
 
   // Add product
   await product.addFirstProductToCart();
-  //await page.pause()
+  
   // View cart
   await product.viewCart();
 
